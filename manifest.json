@@ -6,5 +6,11 @@
   "background_color": "#000000",
   "theme_color": "#00ff88",
   "description": "Learn Cybersecurity with Naducyber",
-  "icons": []
+  "icons": [
+    {
+      "src": "1788268676961.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
 }
