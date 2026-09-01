@@ -1,1 +1,10 @@
-
+{
+  "name": "Naducyber",
+  "short_name": "Naducyber",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00ff88",
+  "description": "Learn Cybersecurity with Naducyber",
+  "icons": []
+}
