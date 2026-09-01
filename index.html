@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naducyber</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h1>🛡️ Naducyber</h1>
+  <button onclick="toggleTheme()">🌙 Dark / ☀️ Light</button>
+
+  <button onclick="goHome()">🏠 Home</button>
+  <button onclick="showProfile()">👤 Profile</button>
+
+  <div id="home">
+
+    <h2>Welcome! 👋</h2>
+
+    <p>Learn cybersecurity step by step.</p>
+    <input
+  type="text"
+  id="studentName"
+  placeholder="Enter your name"
+>
+
+<button onclick="saveName()">💾 Save Name</button>
+
+<p id="nameMessage"></p>
+
+    <div class="stats">
+
+      <div class="stat-card">
+        <h3>📚 Progress</h3>
+        <p><span id="completed">0</span>/10 Days</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>📝 Score</h3>
+        <p><span id="scoreDisplay">0</span> Points</p>
+      </div>
+
+    </div>
+
+    <div class="progress-box">
+
+      <p>Course Progress</p>
+
+      <div class="progress-bar">
+        <div id="progress"></div>
+      </div>
+
+      <p id="progressText">0% Complete</p>
+
+    </div>
+
+    <button onclick="showLessons()">📚 Start Learning</button>
+
+  </div>
+
+  <div id="lessons" style="display:none;">
+
+    <h2>📚 10-Day Cybersecurity Course</h2>
+
+    <button onclick="openDay(1)">Day 1 🛡️</button>
+    <button onclick="openDay(2)">Day 2 🔐</button>
+    <button onclick="openDay(3)">Day 3 🔑</button>
+    <button onclick="openDay(4)">Day 4 🎣</button>
+    <button onclick="openDay(5)">Day 5 🌐</button>
+    <button onclick="openDay(6)">Day 6 🦠</button>
+    <button onclick="openDay(7)">Day 7 📶</button>
+    <button onclick="openDay(8)">Day 8 🔒</button>
+    <button onclick="openDay(9)">Day 9 🧠</button>
+    <button onclick="openDay(10)">Day 10 🏆</button>
+
+    <div id="lesson"></div>
+    <div id="profile" style="display:none;">
+
+  <h2>👤 My Profile</h2>
+
+  <p>👋 Welcome, Student!</p>
+
+  <div class="stat-card">
+    <h3>📚 Completed Days</h3>
+    <p><span id="profileCompleted">0</span>/10</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>📝 Quiz Score</h3>
+    <p><span id="profileScore">0</span> Points</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>🏆 Status</h3>
+    <p id="profileStatus">Learning...</p>
+  </div>
+
+</div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+
+    function updateProgress() {
+
+      const day = Number(localStorage.getItem("completedDay")) || 0;
+      const savedScore = Number(localStorage.getItem("score")) || 0;
+
+      document.getElementById("completed").textContent = day;
+      document.getElementById("scoreDisplay").textContent = savedScore;
+
+      const percent = (day / 10) * 100;
+
+      document.getElementById("progress").style.width = percent + "%";
+
+      document.getElementById("progressText").textContent =
+        Math.round(percent) + "% Complete";
+    }
+
+    updateProgress();
+
+  </script>
+
+</body>
+</html>
